@@ -61,5 +61,33 @@
 			$scope.activeTable = !$scope.activeTable;
 		}
 	});
+
+
+	/**
+
+	Form Controller
+	**/
+	app.controller('exampleFormController', function( $scope ){ 
+		
+		$scope.formDetails = [];
+		$scope.type = 'Reccuring';
+		$scope.grade = 0;
+
+
+		$scope.addFormDetails = function () {
+
+			$scope.formDetails.push({
+				name: $scope.name,
+				age: $scope.age,	
+				grade: $scope.grade,	
+				type: $scope.type,			
+			});
+
+		}
+		
+		$scope.remove = function (detail) {
+			$scope.formDetails.splice($scope.formDetails.indexOf(detail),1);
+		}
+	});
 	
 })();	

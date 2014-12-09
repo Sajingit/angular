@@ -7,6 +7,9 @@ input[type=button] {
     cursor: pointer;
     height: 50px;
     width: 100px;
+    float: left;
+    margin-top: 10px;
+    margin-right: 20px;
 }
 .counter-value {
     background-color: #8892bf;
@@ -15,13 +18,26 @@ input[type=button] {
     margin-left: 20px;
     padding: 15px;
 }
-input[type=text] { 
+input[type="text"] {
     border: 1px solid #ccc;
+    clear: both;
+    float: left;
     height: 30px;
+    margin-top: 10px;
     width: 200px;
 }
-table{
-	width: 50%;
+select {
+    border: 1px solid #ccc;
+    clear: both;
+    float: left;
+    height: 30px;
+    margin-top: 10px;
+    width: 200px;
+}
+table {
+    float: left;
+    margin-top: 10px;
+    width: 50%;
 }
 table td{
 	width: 50%;
@@ -37,4 +53,10 @@ table td{
 }
 .remove-class{
 	cursor: pointer;
+}
+.float-wrapper, .message{
+
+    float: left;
+    width: 100%;
+    margin-top:10px;
 }
