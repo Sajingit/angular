@@ -67,26 +67,50 @@
 
 	Form Controller
 	**/
-	app.controller('exampleFormController', function( $scope ){ 
+	app.controller('exampleFormController', function( $scope ){  
 		
 		$scope.formDetails = [];
 		$scope.type = 'Reccuring';
 		$scope.grade = 0;
 
 
-		$scope.addFormDetails = function () {
+		$scope.addFormDetails = function () { alert($scope.hiddenId);
+			if($scope.hiddenId != ''){
+				$scope.formDetails.push({
+					name: $scope.name,
+					email: $scope.email,	
+					phone: $scope.phone,	
+					grade: $scope.grade,	
+					type: $scope.type,			
+				});
+			}else{
 
-			$scope.formDetails.push({
-				name: $scope.name,
-				age: $scope.age,	
-				grade: $scope.grade,	
-				type: $scope.type,			
-			});
+				var contacts = {
+							       name: $scope.name,
+					email: $scope.email,	
+					phone: $scope.phone,	
+					grade: $scope.grade,	
+					type: $scope.type,
+				};
+console.log(contacts);
+				$scope.formDetails[$scope.hiddenId] = contacts;
+				
+
+			}
+
 
 		}
 		
 		$scope.remove = function (detail) {
 			$scope.formDetails.splice($scope.formDetails.indexOf(detail),1);
+		}
+
+		$scope.edit = function (detail) {
+			$scope.name = detail.name;
+			var index = $scope.formDetails.indexOf(detail);
+			$scope.hiddenId = index;
+			
+			//$scope.formDetails.splice($scope.formDetails.indexOf(detail),1);
 		}
 	});
 	

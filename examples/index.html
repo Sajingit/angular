@@ -39,39 +39,41 @@
 </div>
 
 
-<div class="seperator"></div>
-<div class="float-wrapper">Example: Add Form Details</div>
-<div ng-controller="exampleFormController">
+<div class="seperator">
+	<div class="float-wrapper">Example: Add/Edit Form Details</div>
+	<div ng-controller="exampleFormController">
 
-	<input type="text" ng-model="name">
-	<input type="text" ng-model="age">
-
-	<select ng-model="grade">
-	    <option value="0" selected="selected">---Select Grade---</option>
-		<option value="A">A</option>
-		<option value="B">B</option>
-		<option value="C">C</option>
-		<option value="D">D</option>
-	</select>
-	<div class="float-wrapper">
-		Reccuring:<input type="radio" ng-model="type" value="Reccuring">
-		Non Reccuring:<input type="radio" ng-model="type" value="Non Reccuring">
+		Name: <input type="text" ng-model="name">
+		Email: <input type="text" ng-model="email">
+		Phone: <input type="text" ng-model="phone">
+		Grade:<select ng-model="grade">
+		    <option value="0" selected="selected">---Select Grade---</option>
+			<option value="A">A</option>
+			<option value="B">B</option>
+			<option value="C">C</option>
+			<option value="D">D</option>
+		</select>
+		Type: <div class="float-wrapper">
+			Reccuring:<input type="radio" ng-model="type" value="Reccuring">
+			Non Reccuring:<input type="radio" ng-model="type" value="Non Reccuring">
+		</div>
+		<input type="hidden" ng-model="hiddenId">
+		<input type="button" ng-click="addFormDetails()" value="Add Details">
+		<input type="button" ng-click="toggle()" value="Show/Hide">
+		<div ng-show="activeMessage">{{message}}</div>
+		<table>
+			<tr ng-repeat="detail in formDetails">
+				<td>{{detail.name}}</td>
+				<td>{{detail.email}}</td>
+				<td>{{detail.phone}}</td>
+				<td>{{detail.grade}}</td>
+				<td>{{detail.type}}</td>
+				<td class="remove-class"><a ng-click="edit(detail)">Edit</a> | <a ng-click="remove(detail)">Remove</a></td>
+				
+			</tr>
+		</table>
 	</div>
-	<input type="button" ng-click="addFormDetails()" value="Add Details">
-	<input type="button" ng-click="toggle()" value="Show/Hide">
-	<div ng-show="activeMessage">{{message}}</div>
-	<table>
-		<tr ng-repeat="detail in formDetails">
-			<td>{{detail.name}}</td>
-			<td>{{detail.age}}</td>
-			<td>{{detail.grade}}</td>
-			<td>{{detail.type}}</td>
-			<td class="remove-class"><a ng-click="remove(detail)">Remove</a></td>
-			
-		</tr>
-	</table>
 </div>
-
 <link rel="stylesheet" type="text/css" href="css/style.css"  />
 </body>
 </html>
