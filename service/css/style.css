@@ -33,3 +33,11 @@ body{
 .service-wrapper ul li.active{
     background-color:#8ec16d;
 }
+.selected-service{
+	width: 60%;
+	margin: 0px auto;
+}
+.selected-service td{
+	border: 1px solid #61a1bc;
+	padding: 5px;	
+}	
