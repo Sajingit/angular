@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="service">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Examples</title>
+<script type="text/javascript" src="../assets/angular.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+
+
+<div class="body-wrapper">
+	
+<div class="service-wrapper" ng-controller="serviceController">
+	<ul>
+		<li ng-click="toggleService(service)" ng-repeat="service in services" ng-class="{active:service.active}">{{service.name}}<span>${{service.price}}</span></li>
+		<li>Total <span>{{total() | currency}}</span></li>{{alert()}}
+	</ul>
+
+</div>
+
+</div>
+<link rel="stylesheet" type="text/css" href="css/style.css"  />
+</body>
+</html>
