@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+body{
+	font-family: arial;
+}
+
+.personal-details-wrapper, .personal-image-wrapper, .personal-service-wrapper{
+    background-color: #61a1bc;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px #ccc;
+    display: block;
+    float: left;
+    height: auto;
+    margin: 10px;
+    padding: 35px 60px;
+    width: 400px;
+}
+.register-wrapper ul li {
+    background-color: #e35885;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 8px;
+    padding: 20px 30px;
+}
+.register-wrapper ul {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    list-style: outside none none;
+    margin: 20px 0 15px;
+    text-align: left;
+    padding-left: 0;
+}
+.register-wrapper ul li span{
+    float: right;
+}
+.register-wrapper ul li.active{
+    background-color:#8ec16d;
+}
+.selected-service{
+	width: 60%;
+	margin: 0px auto;
+}
+.selected-service td{
+	border: 1px solid #61a1bc;
+	padding: 5px;	
+}	
+.personal-details-wrapper span, .personal-image-wrapper span{
+     float: left;
+    font-size: 18px;
+    padding: 15px 15px 10px;
+    width: 100%;
+}
+
+.personal-details-wrapper span input, .personal-image-wrapper span input{
+    border: 1px solid #fff;
+    float: right;
+    height: 25px;
+    width: 65%;
+}
+.register-wrapper {
+    margin: 0 auto;
+    width: 50%;
+}
+.reg-button-wrapper{
+    width: 100%;
+    margin: 0px auto;
+}
+.reg-button-wrapper input {
+    background-color: #61a1bc;
+    border: 1px solid #61a1bc;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    height: 45px;
+    margin: 0 auto;
+    text-align: center;
+    width: 92%;
+}
+.reg-button-wrapper input:hover {
+    background-color: #e35885;
+    border: 1px solid #e35885;
+}
+.body-wrapper{
+    margin-bottom: 100px;
+}

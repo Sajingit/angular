@@ -1,0 +1,7 @@
+<table class="selected-service">
+		<tr ng-repeat="selected in selectedService">
+			<td>{{selected.name}}</td>
+			<td>{{selected.price | currency: "Rs "}}</td>
+			<td><a ng-click="remove(selected)">Remove</a></td>
+		</tr>
+	</table>
