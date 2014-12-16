@@ -5,6 +5,7 @@
 <title>Examples</title>
 <script type="text/javascript" src="../js/library/angular.js"></script>
 <script type="text/javascript" src="../js/register/app.js"></script>
+<script type="text/javascript" src="registerService.js"></script>
 </head>
 <body>
 
@@ -13,7 +14,7 @@
 	<div class="register-wrapper">
 		<form name="registerForm" novalidate>
 			<div class="personal-details-wrapper">
-				<span>Name: <input type="text" ng-model="regName" ng-pattern="[a-zA-Z]"/></span>
+				<span>Name: <input type="text" ng-model="regName"/></span>
 				<span>Age: <input type="text" ng-model="regAge" /></span>
 				<span>Email: <input type="email" ng-model="regEmail" name="regEmail" /></span>
 				<span>Phone: <input type="text" ng-model="regPhone" /></span>
@@ -24,7 +25,7 @@
 			<div class="personal-service-wrapper">
 				<ul>
 					<li ng-click="toggleService(service)" ng-repeat="service in services" ng-class="{active:service.active}">{{service.name}}<span>${{service.price}}</span></li>
-					<li>Total <span>{{total() | currency}}</span></li>{{alert()}}
+					<li>Total <span>{{total() | currency}}</span></li>
 				</ul>
 			</div>
 			<div class="reg-button-wrapper">
