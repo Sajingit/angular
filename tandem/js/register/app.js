@@ -2,7 +2,11 @@ var app = angular.module('service', []);
 app.controller('serviceController',function( $scope,registerFactory){ 
 	
 	$scope.selectedService = [];
-	$scope.services = registerFactory;
+	registerFactory.getCources(function(data){
+		$scope.services = data;
+	});
+
+
 
 	$scope.toggleService = function (value){
 		value.active = !value.active;
@@ -13,7 +17,7 @@ app.controller('serviceController',function( $scope,registerFactory){
 	    total = 0;
 		angular.forEach($scope.services,function(service){ 
 			if(service.active == true){
-				total = total + service.price;
+				total = total + parseInt(service.price);
 			}
 		});
 		return total;
@@ -25,7 +29,7 @@ app.controller('serviceController',function( $scope,registerFactory){
 		angular.forEach($scope.services,function(service){ 
 			if(service.active == true){
 				nameCon = nameCon + service.name + ", " ;
-				total = total + service.price;
+				total = total + parseInt(service.price);
 			}
 		});
 		
@@ -35,7 +39,7 @@ app.controller('serviceController',function( $scope,registerFactory){
 		})
 	}
 	
-	$scope.remove = function (item){ console.log($scope.selectedService.indexOf(item));
+	$scope.remove = function (item){ 
 		$scope.selectedService.splice($scope.selectedService.indexOf(item),1)
 	}
 	
