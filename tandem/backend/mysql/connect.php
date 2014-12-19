@@ -1,16 +1,28 @@
 <?php
 
-$servername = "localhost";
-$username   = "root";
-$password   = "qburst";
-$db = "tandem";
+class database{
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $db);
+	public function __construct(){
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+		try {
+
+			$this->hostname = 'localhost';
+			$this->username = 'root';
+			$this->password = 'qburst';
+
+		    $this->dbh = new PDO("mysql:host=".$this->hostname.";dbname=tandem", $this->username, $this->password);
+		    print_R($this->dbh);
+		    echo 'Connected to database';
+		}
+		catch(PDOException $e){
+
+		    echo $e->getMessage();die();
+		}
+	}
+}
+
+$obj = new database();print_R($obj);die("s");
 
 ?>
+
+

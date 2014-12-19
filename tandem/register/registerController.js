@@ -23,9 +23,9 @@ app.controller('serviceController',function( $scope,registerFactory){
 
 	$scope.total = function (){ 
 	    total = 0;
-		angular.forEach($scope.services,function(service){ 
-			if(service.active == true){
-				total = total + parseInt(service.price);
+		angular.forEach($scope.cources,function(cource){ 
+			if(cource.active == true){
+				total = total + parseInt(cource.price);
 			}
 		});
 		return total;
