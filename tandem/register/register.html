@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Examples</title>
 <script type="text/javascript" src="../js/library/angular.js"></script>
-<script type="text/javascript" src="../js/register/app.js"></script>
+<script type="text/javascript" src="registerController.js"></script>
 <script type="text/javascript" src="registerService.js"></script>
 </head>
 <body>
@@ -14,27 +14,25 @@
 	<div class="register-wrapper">
 		<form name="registerForm" novalidate>
 			<div class="personal-details-wrapper">
-				<span>Name: <input type="text" ng-model="regName"/></span>
-				<span>Age: <input type="text" ng-model="regAge" /></span>
-				<span>Email: <input type="email" ng-model="regEmail" name="regEmail" /></span>
-				<span>Phone: <input type="text" ng-model="regPhone" /></span>
+				<span>Name: <input type="text" ng-model="register.name"/></span>
+				<span>Age: <input type="text" ng-model="register.age" /></span>
+				<span>Email: <input type="email" ng-model="register.email" name="regEmail" /></span>
+				<span>Phone: <input type="text" ng-model="register.phone" /></span>
 			</div>
 			<div class="personal-image-wrapper">
-				<span>Image: <input type="file" ng-model="regImage" /></span>
+				<span>Image: <input type="file" ng-model="register.img" /></span>
 			</div>
 			<div class="personal-service-wrapper">
 				<ul>
-					<li ng-click="toggleService(service)" ng-repeat="service in services" ng-class="{active:service.active}">{{service.name}}<span>${{service.price}}</span></li>
+					<li ng-click="toggleService(cource)" ng-repeat="cource in cources" ng-class="{active:cource.active}">{{cource.name}}<span>${{cource.price}}</span></li>
 					<li>Total <span>{{total() | currency}}</span></li>
 				</ul>
 			</div>
 			<div class="reg-button-wrapper">
-				<input type="button" value="Add Service" ng-click="addSelectedService()" ng-disabled="registerForm.$invalid">
+				<input type="button" value="Register" ng-click="clickRegister()" ng-disabled="registerForm.$invalid">
 			</div>
 		</form>
 	</div>
-	<span ng-include="'service-display-tables.html'"></span>
-
 </div>
 <link rel="stylesheet" type="text/css" href="../css/register/style.css"  />
 

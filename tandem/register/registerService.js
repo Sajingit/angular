@@ -1,9 +1,14 @@
 app.factory('registerFactory', function($http){
 
-	return{
-		getCources : function(callback){
-			$http.get('../backend/register/register.php').success(callback);
-		}
+	var registerFactory = {};
+
+	registerFactory.getCources = function(){
+		return $http.get('../backend/register/register.php');
 	}
+	registerFactory.saveUser = function(data){
+		return $http.post('../backend/register/saveUserData.php', data);
+	}
+	
+	return registerFactory;
 	
 });
