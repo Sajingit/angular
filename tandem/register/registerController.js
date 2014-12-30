@@ -33,8 +33,13 @@ app.controller('serviceController',function( $scope,registerFactory){
 	
 	$scope.clickRegister = function (){ 
 
-		registerFactory.saveUser($scope.register).success(function(){
-			alert("success");
+		registerFactory.saveUser($scope.register).success(function(data){
+				if(data.success_message != null){
+					$scope.successMessage = data.success_message;
+				}else{
+					$scope.errorMessage = data.error_message; 
+				}
+			}
 		}).error(function(){
 			alert("error");
 		});

@@ -11,17 +11,14 @@ class database{
 			$this->password = 'qburst';
 
 		    $this->dbh = new PDO("mysql:host=".$this->hostname.";dbname=tandem", $this->username, $this->password);
-		    print_R($this->dbh);
-		    echo 'Connected to database';
 		}
 		catch(PDOException $e){
 
-		    echo $e->getMessage();die();
+		    echo $e->getMessage();
 		}
 	}
 }
 
-$obj = new database();print_R($obj);die("s");
 
 ?>
 
